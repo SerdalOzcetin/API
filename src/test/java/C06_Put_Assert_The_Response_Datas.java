@@ -56,7 +56,11 @@ public class C06_Put_Assert_The_Response_Datas {
 
         // 4- Assertion
 
-        response.then().assertThat().statusCode(200)
+        response.then().assertThat()
+                .statusCode(200)
+                .contentType("application/json; charset=utf-8")
+                .header("Server","cloudflare")
+                .statusLine("HTTP/1.1 200 OK");
 
     }
 
