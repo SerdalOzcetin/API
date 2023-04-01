@@ -1,0 +1,21 @@
+package baseUrl;
+
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.specification.RequestSpecification;
+import org.junit.Before;
+
+public class BaseUrl_JsonPlaceHolder {
+
+
+    protected RequestSpecification specJsonPlaceHolder;
+
+    @Before
+    public void setUp(){
+
+        specJsonPlaceHolder = new RequestSpecBuilder()
+                                .setBaseUri("https://jsonplaceholder.typicode.com")
+                                .build();
+
+    }
+
+}
