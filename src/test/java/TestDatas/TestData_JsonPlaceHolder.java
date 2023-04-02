@@ -2,6 +2,9 @@ package TestDatas;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestData_JsonPlaceHolder {
 
     public static int successfulStatusCode =200;
@@ -34,6 +37,19 @@ public class TestData_JsonPlaceHolder {
 
 
         return expectedData;
+
+    }
+
+    public static Map<String,Object> MapBodyCreation(){
+
+        Map<String,Object> requestBodyMap = new HashMap<>();
+
+        requestBodyMap.put("title","Jhon");
+        requestBodyMap.put("body","Doe");
+        requestBodyMap.put("userId",10.0);
+        requestBodyMap.put("id",10.0);
+
+        return requestBodyMap;
 
     }
 

@@ -2,6 +2,9 @@ package TestDatas;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestData_Dummy {
 
     public static int successfulStatusCode =200;
@@ -46,6 +49,26 @@ public class TestData_Dummy {
 
         return expectedData;
 
+    }
+
+    public static Map<String,Object> creationBodyMap(double id,
+                                                     String employee_name,
+                                                     double employee_age,
+                                                     double employee_salary,
+                                                     String profile_image){
+
+        Map<String,Object> expectedBodyMap = new HashMap<>();
+        Map<String,Object> expectedInnerBodyMap = new HashMap<>();
+            expectedInnerBodyMap.put("id",id);
+            expectedInnerBodyMap.put("employee_name",employee_name);
+            expectedInnerBodyMap.put("employee_age",employee_age);
+            expectedInnerBodyMap.put("employee_salary",employee_salary);
+            expectedInnerBodyMap.put("profile_image",profile_image);
+        expectedBodyMap.put("status","success");
+        expectedBodyMap.put("message","Successfully! Record has been fetched.");
+        expectedBodyMap.put("data",expectedInnerBodyMap);
+
+        return expectedBodyMap;
     }
 
 }
